@@ -79,7 +79,7 @@ def main():
     #
     # ----- LAYOUT
     
-    colors = ['#70ABBA', '#B5DB95', '#FFD882', '#393E46']
+    colors = ['#70ABBA', '#B5DB95', '#FFD882', '#393E46', '#ED7771', '#B8AFC9']
 
 
     # _________________________
@@ -161,7 +161,10 @@ def main():
         commuters_df['bike and pedestrian percentage'] = commuters_df['bicycle percentage'] + commuters_df['pedestrian percentage']
     
     else:
-        commuters_df = pd.read_csv('https://raw.githubusercontent.com/bauhofer/data/master/commuters_clean.csv', sep=';')
+        # Local
+        commuters_df = pd.read_csv('../us-commuters-data/commuters_clean.csv', sep=';')
+        # Global
+#        commuters_df = pd.read_csv('https://raw.githubusercontent.com/bauhofer/data/master/commuters_clean.csv', sep=';')
     
     # OPTIONAL: Save data to csv
 #    commuters_df.to_csv(path_or_buf='../us-commuters-data/commuters_clean.csv', sep=';')
@@ -172,7 +175,9 @@ def main():
     # ----- CHOROPLETH MAP
 
     # Presentation
-    options = st.multiselect('Commuters types:',('Bicyclists', 'Pedestrians', 'Public Transport'))
+    options = st.multiselect(label='Commuters types:',
+                             options=('Bicyclists', 'Pedestrians', 'Public Transport'),
+                             default=['Public Transport'])
     
     # Figure
     fig = go.Figure(
@@ -213,7 +218,7 @@ def main():
     if not options:
         choro_trace(percentage='total percentage',
                     legend_name='Total non-car commuters',
-                    selected_color=3)
+                    selected_color=4)
     
     # Layout
     fig.update_layout(
@@ -321,7 +326,7 @@ def main():
                data=commuters_df.loc[commuters_df['public_transit percentage'] != 0],
                height=7, aspect=1.6, robust=True, palette='tab10',
                scatter_kws=dict(s=60, linewidths=.7, edgecolors='black'))
-    ax.set(xlabel="Density [People per km^2]", ylabel="Public Transport [%]")
+    ax.set(xlabel="Density [People per $\mathregular{km^2}$]", ylabel="Public Transport [%]")
     st.pyplot()
     
     
