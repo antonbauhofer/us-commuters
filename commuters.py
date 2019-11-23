@@ -73,8 +73,6 @@ def main():
                 color=colors[selected_color],
                 line_width=0)
         ))
-    
-    # DEFINE FUNCTION FOR BAR PLOT
 
 
     # _________________________
@@ -98,7 +96,7 @@ def main():
     if st.checkbox("Load data in real time", value=False, key=None):
         real_time_data = True
 
-    st.markdown("Data Sources: Wikipedia, Simplemaps") 
+    st.markdown("Data Sources: Wikipedia, simplemaps.com") 
 
     st.subheader("Data Visualization")
     
@@ -122,14 +120,14 @@ def main():
         public_transit_raw = load(public_transit_url)
         
         # Load data from simpledata
-        # !!! UPDATE TO GITHUB !!!
-        us_data = pd.read_csv('../us-commuters-data/simplemaps_uscities_basicv1/uscities.csv')
-        #    st.write(us_data[['city','lat','lng']].head())
-        #    st.write(us_data.sort_values('city'))
+#        us_data = pd.read_csv('../us-commuters-data/simplemaps_uscities_basicv1/uscities.csv')
+        us_data = pd.read_csv('https://raw.githubusercontent.com/bauhofer/data/master/uscities.csv')
         
-        # !!! Load US universities and colleges data !!!
-        us_colleges = pd.read_csv('../us-commuters-data/us-colleges-and-universities.csv', sep=';')
-        #    st.write(us_colleges)
+        #Load US universities and colleges data
+        # Local
+#        us_colleges = pd.read_csv('../us-commuters-data/us-colleges-and-universities.csv', sep=';')
+        # Global
+#        us_colleges = pd.read_csv('https://raw.githubusercontent.com/bauhofer/data/master/us-colleges-and-universities.csv', sep=';')
     
     
     # _________________________
@@ -335,7 +333,11 @@ def main():
     # ----- IN PROGRESS !!!
     
     # Find indicators
+    # Local
 #    us_colleges = pd.read_csv('../us-commuters-data/us-colleges-and-universities.csv', sep=';')
+    # Global
+#    us_colleges = pd.read_csv('https://raw.githubusercontent.com/bauhofer/data/master/us-colleges-and-universities.csv', sep=';')
+
 #    st.write(us_colleges)
     # Number of colleges in cities
     # Number of students and lecturers in cities
