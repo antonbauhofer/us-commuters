@@ -12,6 +12,7 @@ Three Wikipedia pages are scraped and parsed.
 - Libraries and tools: Beautifulsoup, Regular expressions, urllib, Streamlit
 
 Data is cleaned and merged with geographical data provided by simplemaps.com.
+- https://simplemaps.com/data/us-cities
 - Geographical locations are required for visualisation
 - missing data is filled, different naming conventions are corrected
 - cleaned data is stored to improve speed in future use
