@@ -5,7 +5,7 @@ https://us-commuters.herokuapp.com/
 Interactive visualisation of non-motorised commuter types in US cities.
 Code outline:
 
-Three Wikipedia pages are scraped.
+Three Wikipedia pages are scraped and parsed.
 - https://en.wikipedia.org/wiki/List_of_U.S._cities_with_most_bicycle_commuters
 - https://en.wikipedia.org/wiki/List_of_U.S._cities_with_most_pedestrian_commuters
 - https://en.wikipedia.org/wiki/List_of_U.S._cities_with_high_transit_ridership
