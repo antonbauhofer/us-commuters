@@ -163,7 +163,7 @@ def main():
         commuters_df['bike and pedestrian percentage'] = commuters_df['bicycle percentage'] + commuters_df['pedestrian percentage']
     
     else:
-        commuters_df = pd.read_csv('../us-commuters-data/commuters_clean.csv', sep=';')
+        commuters_df = pd.read_csv('https://raw.githubusercontent.com/bauhofer/data/master/commuters_clean.csv', sep=';')
     
     # OPTIONAL: Save data to csv
 #    commuters_df.to_csv(path_or_buf='../us-commuters-data/commuters_clean.csv', sep=';')
