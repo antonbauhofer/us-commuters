@@ -96,8 +96,6 @@ def main():
     if st.checkbox("Load data in real time", value=False, key=None):
         real_time_data = True
 
-    st.markdown("Data Sources: Wikipedia, simplemaps.com") 
-
     st.subheader("Data Visualization")
     
     st.markdown("Use the following dropdown menu to display cities with high percentages of certain commuter types. \
@@ -342,6 +340,8 @@ def main():
     # Number of colleges in cities
     # Number of students and lecturers in cities
     
+    
+    st.markdown("Data Sources: Wikipedia, simplemaps.com") 
     
 if __name__ == '__main__':
     main()
